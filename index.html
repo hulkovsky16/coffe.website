@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawa Ziarnista - Sklep Internetowy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">☕ CafeMaster</a>
+            <nav class="nav">
+                <a href="#promotions">Promocje</a>
+                <a href="#recommended">Polecane</a>
+                <a href="#bestsellers">Bestsellery</a>
+                <a href="#" id="about-link">O marce</a>
+                <a href="#" id="contact-link">Kontakt</a>
+            </nav>
+            <div class="header-actions">
+                <button id="wishlist-btn" class="icon-btn" title="Ulubione">
+                    ❤️ <span id="wishlist-count" class="badge">0</span>
+                </button>
+                <a href="#" class="cart-link icon-btn" title="Koszyk">
+                    🛒 <span id="cart-count" class="badge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Банер -->
+    <section class="hero">
+        <div class="container">
+            <h1>Świeżo palona kawa ziarnista</h1>
+            <p>Najwyższej jakości ziarna Arabica i Robusta dostarczane prosto do Twojego domu.</p>
+        </div>
+    </section>
+
+    <!-- ОСНОВНИЙ КАТАЛОГ -->
+    <main class="container">
+
+        <!-- РЯД 1: ЗНИЖКИ (Promocje) -->
+        <section id="promotions" class="catalog-section">
+            <h2 class="section-title">🔥 Promocje i Wyprzedaże</h2>
+            <div class="product-grid">
+
+                <div class="product-card" data-base-price="59">
+                    <span class="badge-tag discount-badge">% PROMOCJA</span>
+                    <button class="btn-wishlist" title="Dodaj do ulubionych">❤️</button>
+                    <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=500&auto=format&fit=crop&q=80" alt="Bogani Selection" style="height:200px; object-fit:contain; width:100%;">
+                    <div class="rating">⭐ 4.85</div>
+                    <h3>Bogani Selection</h3>
+                    <p class="description">Intensywny smak z nutą gorzkiej czekolady i orzechów.</p>
+                    <div class="weight-selector">
+                        <label>Waga:</label>
+                        <select class="select-weight">
+                            <option value="0.5">500 g</option>
+                            <option value="1" selected>1 kg</option>
+                            <option value="1.5">1.5 kg</option>
+                            <option value="2">2 kg</option>
+                        </select>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-box">
+                            <span class="old-price">79 PLN</span>
+                            <span class="price">59 PLN</span>
+                        </div>
+                        <button class="btn-add">Dodaj do koszyka</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-base-price="68">
+                    <span class="badge-tag discount-badge">% PROMOCJA</span>
+                    <button class="btn-wishlist" title="Dodaj do ulubionych">❤️</button>
+                    <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=500&auto=format&fit=crop&q=80" alt="Crema Special" style="height:200px; object-fit:contain; width:100%;">l">
+                    <div class="rating">⭐ 4.60</div>
+                    <h3>Crema Special</h3>
+                    <p class="description">Aksamitna pianka, łagodny smak idealny do cappuccino.</p>
+                    <div class="weight-selector">
+                        <label>Waga:</label>
+                        <select class="select-weight">
+                            <option value="0.5">500 g</option>
+                            <option value="1" selected>1 kg</option>
+                            <option value="1.5">1.5 kg</option>
+                            <option value="2">2 kg</option>
+                        </select>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-box">
+                            <span class="old-price">85 PLN</span>
+                            <span class="price">68 PLN</span>
+                        </div>
+                        <button class="btn-add">Dodaj do koszyka</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-base-price="75">
+                    <span class="badge-tag discount-badge">% PROMOCJA</span>
+                    <button class="btn-wishlist" title="Dodaj do ulubionych">❤️</button>
+                    <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=500&auto=format&fit=crop&q=80" alt="Brazil Santos" style="height:200px; object-fit:contain; width:100%;">
+                    <div class="rating">⭐ 4.75</div>
+                    <h3>Brazil Santos</h3>
+                    <p class="description">Niska kwasowość, słodki orzechowo-czekoladowy profil.</p>
+                    <div class="weight-selector">
+                        <label>Waga:</label>
+                        <select class="select-weight">
+                            <option value="0.5">500 g</option>
+                            <option value="1" selected>1 kg</option>
+                            <option value="1.5">1.5 kg</option>
+                            <option value="2">2 kg</option>
+                        </select>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-box">
+                            <span class="old-price">95 PLN</span>
+                            <span class="price">75 PLN</span>
+                        </div>
+                        <button class="btn-add">Dodaj do koszyka</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- РЯД 2: РЕКОМЕНДОВАНІ КАВ'ЯРНЕЮ (Polecane) -->
+        <section id="recommended" class="catalog-section">
+            <h2 class="section-title">☕ Polecane przez Kawiarnię</h2>
+            <div class="product-grid">
+
+                <div class="product-card" data-base-price="97">
+                    <span class="badge-tag recommended-badge">POLECANE</span>
+                    <button class="btn-wishlist" title="Dodaj do ulubionych">❤️</button>
+                    <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=500&auto=format&fit=crop&q=80" alt="Passalacqua Mehari" style="height:200px; object-fit:contain; width:100%;">
+                    <div class="rating">⭐ 4.95</div>
+                    <h3>Passalacqua Mehari</h3>
+                    <p class="description">Wyjątkowa neapolitańska mieszanka z bogatym aromatem.</p>
+                    <div class="weight-selector">
+                        <label>Waga:</label>
+                        <select class="select-weight">
+                            <option value="0.5">500 g</option>
+                            <option value="1" selected>1 kg</option>
+                            <option value="1.5">1.5 kg</option>
+                            <option value="2">2 kg</option>
+                        </select>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-box">
+                            <span class="price">97 PLN</span>
+                        </div>
+                        <button class="btn-add">Dodaj do koszyka</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-base-price="105">
+                    <span class="badge-tag recommended-badge">POLECANE</span>
+                    <button class="btn-wishlist" title="Dodaj do ulubionych">❤️</button>
+                    <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=500&auto=format&fit=crop&q=80" alt="Ethiopia Yirgacheffe" style="height:200px; object-fit:contain; width:100%;">
+                    <div class="rating">⭐ 4.90</div>
+                    <h3>Ethiopia Yirgacheffe</h3>
+                    <p class="description">Kwiatowy aromat, nuty jaśminu i dojrzałych brzoskwiń.</p>
+                    <div class="weight-selector">
+                        <label>Waga:</label>
+                        <select class="select-weight">
+                            <option value="0.5">500 g</option>
+                            <option value="1" selected>1 kg</option>
+                            <option value="1.5">1.5 kg</option>
+                            <option value="2">2 kg</option>
+                        </select>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-box">
+                            <span class="price">105 PLN</span>
+                        </div>
+                        <button class="btn-add">Dodaj do koszyka</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-base-price="123">
+                    <span class="badge-tag recommended-badge">POLECANE</span>
+                    <button class="btn-wishlist" title="Dodaj do ulubionych">❤️</button>
+                    <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=500&auto=format&fit=crop&q=80" alt="Excelsior Panama" style="height:200px; object-fit:contain; width:100%;">
+                    <div class="rating">⭐ 4.88</div>
+                    <h3>Excelsior Panama</h3>
+                    <p class="description">Ekskluzywna kawa z górzystych rejonów Panamy.</p>
+                    <div class="weight-selector">
+                        <label>Waga:</label>
+                        <select class="select-weight">
+                            <option value="0.5">500 g</option>
+                            <option value="1" selected>1 kg</option>
+                            <option value="1.5">1.5 kg</option>
+                            <option value="2">2 kg</option>
+                        </select>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-box">
+                            <span class="price">123 PLN</span>
+                        </div>
+                        <button class="btn-add">Dodaj do koszyka</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- РЯД 3: БЕСТСЕЛЕРИ (Bestsellery) -->
+        <section id="bestsellers" class="catalog-section">
+            <h2 class="section-title">🏆 Bestsellery</h2>
+            <div class="product-grid">
+
+                <div class="product-card" data-base-price="89">
+                    <span class="badge-tag bestseller-badge">BESTSELLER</span>
+                    <button class="btn-wishlist" title="Dodaj do ulubionych">❤️</button>
+                    <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=500&auto=format&fit=crop&q=80" alt="Lavazza Crema e Aroma" style="height:200px; object-fit:contain; width:100%;">
+                    <div class="rating">⭐ 4.92</div>
+                    <h3>Lavazza Crema e Aroma</h3>
+                    <p class="description">Niezwykle popularna klasyczna włoska mieszanka.</p>
+                    <div class="weight-selector">
+                        <label>Waga:</label>
+                        <select class="select-weight">
+                            <option value="0.5">500 g</option>
+                            <option value="1" selected>1 kg</option>
+                            <option value="1.5">1.5 kg</option>
+                            <option value="2">2 kg</option>
+                        </select>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-box">
+                            <span class="price">89 PLN</span>
+                        </div>
+                        <button class="btn-add">Dodaj do koszyka</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-base-price="99">
+                    <span class="badge-tag bestseller-badge">BESTSELLER</span>
+                    <button class="btn-wishlist" title="Dodaj do ulubionych">❤️</button>
+                    <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=500&auto=format&fit=crop&q=80" alt="Lavazza Qualita Oro" style="height:200px; object-fit:contain; width:100%;">
+                    <div class="rating">⭐ 4.97</div>
+                    <h3>Lavazza Qualita Oro</h3>
+                    <p class="description">100% Arabica o słodkim i aromatycznym profilu.</p>
+                    <div class="weight-selector">
+                        <label>Waga:</label>
+                        <select class="select-weight">
+                            <option value="0.5">500 g</option>
+                            <option value="1" selected>1 kg</option>
+                            <option value="1.5">1.5 kg</option>
+                            <option value="2">2 kg</option>
+                        </select>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-box">
+                            <span class="price">99 PLN</span>
+                        </div>
+                        <button class="btn-add">Dodaj do koszyka</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-base-price="92">
+                    <span class="badge-tag bestseller-badge">BESTSELLER</span>
+                    <button class="btn-wishlist" title="Dodaj do ulubionych">❤️</button>
+                    <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=500&auto=format&fit=crop&q=80" alt="Lucaffe Mamma Lucia" style="height:200px; object-fit:contain; width:100%;">
+                    <div class="rating">⭐ 4.89</div>
+                    <h3>Lucaffe Mamma Lucia</h3>
+                    <p class="description">Tradycyjny smak palonej kawy z czekoladowym finiszem.</p>
+                    <div class="weight-selector">
+                        <label>Waga:</label>
+                        <select class="select-weight">
+                            <option value="0.5">500 g</option>
+                            <option value="1" selected>1 kg</option>
+                            <option value="1.5">1.5 kg</option>
+                            <option value="2">2 kg</option>
+                        </select>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-box">
+                            <span class="price">92 PLN</span>
+                        </div>
+                        <button class="btn-add">Dodaj do koszyka</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- МОДАЛЬНІ ВІКНА -->
+
+    <!-- Кошик -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Twoj Koszyk</h2>
+                <span id="close-cart" class="close-btn">&times;</span>
+            </div>
+            <div id="cart-items" class="modal-body"></div>
+            <div class="modal-footer">
+                <div>Razem: <strong id="cart-total-price">0 PLN</strong></div>
+                <button class="btn-primary" onclick="alert('Dziękujemy za zamówienie!')">Złóż zamówienie</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Обране (Ulubione) -->
+    <div id="wishlist-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Ulubione Produkty</h2>
+                <span id="close-wishlist" class="close-btn">&times;</span>
+            </div>
+            <div id="wishlist-items" class="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Про нас (O
