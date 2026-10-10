@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kawa Ziarnista - Sklep Internetowy</title>
+    <meta name="description" content="CafeMaster – świeżo palona kawa ziarnista Arabica i Robusta z dostawą do domu.">
+    <title>CafeMaster – Świeżo palona kawa ziarnista | Sklep internetowy</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,20 +13,20 @@
     <header class="header">
         <div class="container header-container">
             <a href="#" class="logo">☕ CafeMaster</a>
-            <nav class="nav">
+            <nav class="nav" aria-label="Główna nawigacja">
                 <a href="#promotions">Promocje</a>
                 <a href="#recommended">Polecane</a>
                 <a href="#bestsellers">Bestsellery</a>
-                <a href="#" id="about-link">O marce</a>
-                <a href="#" id="contact-link">Kontakt</a>
+                <a href="#" id="about-link" data-action="open-modal" data-modal="about-modal">O marce</a>
+                <a href="#" id="contact-link" data-action="open-modal" data-modal="contact-modal">Kontakt</a>
             </nav>
             <div class="header-actions">
-                <button id="wishlist-btn" class="icon-btn" title="Ulubione">
+                <button type="button" id="wishlist-btn" class="icon-btn" data-action="open-modal" data-modal="wishlist-modal" title="Ulubione" aria-label="Ulubione">
                     ❤️ <span id="wishlist-count" class="badge">0</span>
                 </button>
-                <a href="#" class="cart-link icon-btn" title="Koszyk">
+                <button type="button" id="cart-btn" class="icon-btn" data-action="open-modal" data-modal="cart-modal" title="Koszyk" aria-label="Koszyk">
                     🛒 <span id="cart-count" class="badge">0</span>
-                </a>
+                </button>
             </div>
         </div>
     </header>
@@ -46,16 +47,18 @@
             <h2 class="section-title">🔥 Promocje i Wyprzedaże</h2>
             <div class="product-grid">
 
-                <div class="product-card" data-base-price="59">
+                <div class="product-card" data-id="bogani-selection" data-base-price="59" data-old-price="79">
                     <span class="badge-tag discount-badge">% PROMOCJA</span>
-                    <button class="btn-wishlist" title="Dodaj do ulubionych">❤️</button>
-                    <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=500&auto=format&fit=crop&q=80" alt="Bogani Selection" style="height:200px; object-fit:contain; width:100%;">
+                    <button type="button" class="btn-wishlist" data-action="toggle-wishlist" title="Dodaj do ulubionych" aria-label="Dodaj do ulubionych: Bogani Selection" aria-pressed="false">❤️</button>
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=500" alt="Bogani Selection" loading="lazy">
+                    </div>
                     <div class="rating">⭐ 4.85</div>
                     <h3>Bogani Selection</h3>
                     <p class="description">Intensywny smak z nutą gorzkiej czekolady i orzechów.</p>
                     <div class="weight-selector">
-                        <label>Waga:</label>
-                        <select class="select-weight">
+                        <label for="weight-bogani-selection">Waga:</label>
+                        <select id="weight-bogani-selection" class="select-weight">
                             <option value="0.5">500 g</option>
                             <option value="1" selected>1 kg</option>
                             <option value="1.5">1.5 kg</option>
@@ -67,20 +70,22 @@
                             <span class="old-price">79 PLN</span>
                             <span class="price">59 PLN</span>
                         </div>
-                        <button class="btn-add">Dodaj do koszyka</button>
+                        <button type="button" class="btn-add" data-action="add-to-cart">Dodaj do koszyka</button>
                     </div>
                 </div>
 
-                <div class="product-card" data-base-price="68">
+                <div class="product-card" data-id="crema-special" data-base-price="68" data-old-price="85">
                     <span class="badge-tag discount-badge">% PROMOCJA</span>
-                    <button class="btn-wishlist" title="Dodaj do ulubionych">❤️</button>
-                    <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=500&auto=format&fit=crop&q=80" alt="Crema Special" style="height:200px; object-fit:contain; width:100%;">l">
+                    <button type="button" class="btn-wishlist" data-action="toggle-wishlist" title="Dodaj do ulubionych" aria-label="Dodaj do ulubionych: Crema Special" aria-pressed="false">❤️</button>
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500" alt="Crema Special" loading="lazy">
+                    </div>
                     <div class="rating">⭐ 4.60</div>
                     <h3>Crema Special</h3>
                     <p class="description">Aksamitna pianka, łagodny smak idealny do cappuccino.</p>
                     <div class="weight-selector">
-                        <label>Waga:</label>
-                        <select class="select-weight">
+                        <label for="weight-crema-special">Waga:</label>
+                        <select id="weight-crema-special" class="select-weight">
                             <option value="0.5">500 g</option>
                             <option value="1" selected>1 kg</option>
                             <option value="1.5">1.5 kg</option>
@@ -92,20 +97,22 @@
                             <span class="old-price">85 PLN</span>
                             <span class="price">68 PLN</span>
                         </div>
-                        <button class="btn-add">Dodaj do koszyka</button>
+                        <button type="button" class="btn-add" data-action="add-to-cart">Dodaj do koszyka</button>
                     </div>
                 </div>
 
-                <div class="product-card" data-base-price="75">
+                <div class="product-card" data-id="brazil-santos" data-base-price="75" data-old-price="95">
                     <span class="badge-tag discount-badge">% PROMOCJA</span>
-                    <button class="btn-wishlist" title="Dodaj do ulubionych">❤️</button>
-                    <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=500&auto=format&fit=crop&q=80" alt="Brazil Santos" style="height:200px; object-fit:contain; width:100%;">
+                    <button type="button" class="btn-wishlist" data-action="toggle-wishlist" title="Dodaj do ulubionych" aria-label="Dodaj do ulubionych: Brazil Santos" aria-pressed="false">❤️</button>
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=500" alt="Brazil Santos" loading="lazy">
+                    </div>
                     <div class="rating">⭐ 4.75</div>
                     <h3>Brazil Santos</h3>
                     <p class="description">Niska kwasowość, słodki orzechowo-czekoladowy profil.</p>
                     <div class="weight-selector">
-                        <label>Waga:</label>
-                        <select class="select-weight">
+                        <label for="weight-brazil-santos">Waga:</label>
+                        <select id="weight-brazil-santos" class="select-weight">
                             <option value="0.5">500 g</option>
                             <option value="1" selected>1 kg</option>
                             <option value="1.5">1.5 kg</option>
@@ -117,7 +124,7 @@
                             <span class="old-price">95 PLN</span>
                             <span class="price">75 PLN</span>
                         </div>
-                        <button class="btn-add">Dodaj do koszyka</button>
+                        <button type="button" class="btn-add" data-action="add-to-cart">Dodaj do koszyka</button>
                     </div>
                 </div>
 
@@ -129,16 +136,18 @@
             <h2 class="section-title">☕ Polecane przez Kawiarnię</h2>
             <div class="product-grid">
 
-                <div class="product-card" data-base-price="97">
+                <div class="product-card" data-id="passalacqua-mehari" data-base-price="97">
                     <span class="badge-tag recommended-badge">POLECANE</span>
-                    <button class="btn-wishlist" title="Dodaj do ulubionych">❤️</button>
-                    <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=500&auto=format&fit=crop&q=80" alt="Passalacqua Mehari" style="height:200px; object-fit:contain; width:100%;">
+                    <button type="button" class="btn-wishlist" data-action="toggle-wishlist" title="Dodaj do ulubionych" aria-label="Dodaj do ulubionych: Passalacqua Mehari" aria-pressed="false">❤️</button>
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=500" alt="Passalacqua Mehari" loading="lazy">
+                    </div>
                     <div class="rating">⭐ 4.95</div>
                     <h3>Passalacqua Mehari</h3>
                     <p class="description">Wyjątkowa neapolitańska mieszanka z bogatym aromatem.</p>
                     <div class="weight-selector">
-                        <label>Waga:</label>
-                        <select class="select-weight">
+                        <label for="weight-passalacqua-mehari">Waga:</label>
+                        <select id="weight-passalacqua-mehari" class="select-weight">
                             <option value="0.5">500 g</option>
                             <option value="1" selected>1 kg</option>
                             <option value="1.5">1.5 kg</option>
@@ -149,20 +158,22 @@
                         <div class="price-box">
                             <span class="price">97 PLN</span>
                         </div>
-                        <button class="btn-add">Dodaj do koszyka</button>
+                        <button type="button" class="btn-add" data-action="add-to-cart">Dodaj do koszyka</button>
                     </div>
                 </div>
 
-                <div class="product-card" data-base-price="105">
+                <div class="product-card" data-id="ethiopia-yirgacheffe" data-base-price="105">
                     <span class="badge-tag recommended-badge">POLECANE</span>
-                    <button class="btn-wishlist" title="Dodaj do ulubionych">❤️</button>
-                    <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=500&auto=format&fit=crop&q=80" alt="Ethiopia Yirgacheffe" style="height:200px; object-fit:contain; width:100%;">
+                    <button type="button" class="btn-wishlist" data-action="toggle-wishlist" title="Dodaj do ulubionych" aria-label="Dodaj do ulubionych: Ethiopia Yirgacheffe" aria-pressed="false">❤️</button>
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=500" alt="Ethiopia Yirgacheffe" loading="lazy">
+                    </div>
                     <div class="rating">⭐ 4.90</div>
                     <h3>Ethiopia Yirgacheffe</h3>
                     <p class="description">Kwiatowy aromat, nuty jaśminu i dojrzałych brzoskwiń.</p>
                     <div class="weight-selector">
-                        <label>Waga:</label>
-                        <select class="select-weight">
+                        <label for="weight-ethiopia-yirgacheffe">Waga:</label>
+                        <select id="weight-ethiopia-yirgacheffe" class="select-weight">
                             <option value="0.5">500 g</option>
                             <option value="1" selected>1 kg</option>
                             <option value="1.5">1.5 kg</option>
@@ -173,20 +184,22 @@
                         <div class="price-box">
                             <span class="price">105 PLN</span>
                         </div>
-                        <button class="btn-add">Dodaj do koszyka</button>
+                        <button type="button" class="btn-add" data-action="add-to-cart">Dodaj do koszyka</button>
                     </div>
                 </div>
 
-                <div class="product-card" data-base-price="123">
+                <div class="product-card" data-id="excelsior-panama" data-base-price="123">
                     <span class="badge-tag recommended-badge">POLECANE</span>
-                    <button class="btn-wishlist" title="Dodaj do ulubionych">❤️</button>
-                    <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=500&auto=format&fit=crop&q=80" alt="Excelsior Panama" style="height:200px; object-fit:contain; width:100%;">
+                    <button type="button" class="btn-wishlist" data-action="toggle-wishlist" title="Dodaj do ulubionych" aria-label="Dodaj do ulubionych: Excelsior Panama" aria-pressed="false">❤️</button>
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1610889556528-9a770e32642f?w=500" alt="Excelsior Panama" loading="lazy">
+                    </div>
                     <div class="rating">⭐ 4.88</div>
                     <h3>Excelsior Panama</h3>
                     <p class="description">Ekskluzywna kawa z górzystych rejonów Panamy.</p>
                     <div class="weight-selector">
-                        <label>Waga:</label>
-                        <select class="select-weight">
+                        <label for="weight-excelsior-panama">Waga:</label>
+                        <select id="weight-excelsior-panama" class="select-weight">
                             <option value="0.5">500 g</option>
                             <option value="1" selected>1 kg</option>
                             <option value="1.5">1.5 kg</option>
@@ -197,7 +210,7 @@
                         <div class="price-box">
                             <span class="price">123 PLN</span>
                         </div>
-                        <button class="btn-add">Dodaj do koszyka</button>
+                        <button type="button" class="btn-add" data-action="add-to-cart">Dodaj do koszyka</button>
                     </div>
                 </div>
 
@@ -209,16 +222,18 @@
             <h2 class="section-title">🏆 Bestsellery</h2>
             <div class="product-grid">
 
-                <div class="product-card" data-base-price="89">
+                <div class="product-card" data-id="lavazza-crema-e-aroma" data-base-price="89">
                     <span class="badge-tag bestseller-badge">BESTSELLER</span>
-                    <button class="btn-wishlist" title="Dodaj do ulubionych">❤️</button>
-                    <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=500&auto=format&fit=crop&q=80" alt="Lavazza Crema e Aroma" style="height:200px; object-fit:contain; width:100%;">
+                    <button type="button" class="btn-wishlist" data-action="toggle-wishlist" title="Dodaj do ulubionych" aria-label="Dodaj do ulubionych: Lavazza Crema e Aroma" aria-pressed="false">❤️</button>
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=500" alt="Lavazza Crema e Aroma" loading="lazy">
+                    </div>
                     <div class="rating">⭐ 4.92</div>
                     <h3>Lavazza Crema e Aroma</h3>
                     <p class="description">Niezwykle popularna klasyczna włoska mieszanka.</p>
                     <div class="weight-selector">
-                        <label>Waga:</label>
-                        <select class="select-weight">
+                        <label for="weight-lavazza-crema-e-aroma">Waga:</label>
+                        <select id="weight-lavazza-crema-e-aroma" class="select-weight">
                             <option value="0.5">500 g</option>
                             <option value="1" selected>1 kg</option>
                             <option value="1.5">1.5 kg</option>
@@ -229,20 +244,22 @@
                         <div class="price-box">
                             <span class="price">89 PLN</span>
                         </div>
-                        <button class="btn-add">Dodaj do koszyka</button>
+                        <button type="button" class="btn-add" data-action="add-to-cart">Dodaj do koszyka</button>
                     </div>
                 </div>
 
-                <div class="product-card" data-base-price="99">
+                <div class="product-card" data-id="lavazza-qualita-oro" data-base-price="99">
                     <span class="badge-tag bestseller-badge">BESTSELLER</span>
-                    <button class="btn-wishlist" title="Dodaj do ulubionych">❤️</button>
-                    <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=500&auto=format&fit=crop&q=80" alt="Lavazza Qualita Oro" style="height:200px; object-fit:contain; width:100%;">
+                    <button type="button" class="btn-wishlist" data-action="toggle-wishlist" title="Dodaj do ulubionych" aria-label="Dodaj do ulubionych: Lavazza Qualita Oro" aria-pressed="false">❤️</button>
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500" alt="Lavazza Qualita Oro" loading="lazy">
+                    </div>
                     <div class="rating">⭐ 4.97</div>
                     <h3>Lavazza Qualita Oro</h3>
                     <p class="description">100% Arabica o słodkim i aromatycznym profilu.</p>
                     <div class="weight-selector">
-                        <label>Waga:</label>
-                        <select class="select-weight">
+                        <label for="weight-lavazza-qualita-oro">Waga:</label>
+                        <select id="weight-lavazza-qualita-oro" class="select-weight">
                             <option value="0.5">500 g</option>
                             <option value="1" selected>1 kg</option>
                             <option value="1.5">1.5 kg</option>
@@ -253,20 +270,22 @@
                         <div class="price-box">
                             <span class="price">99 PLN</span>
                         </div>
-                        <button class="btn-add">Dodaj do koszyka</button>
+                        <button type="button" class="btn-add" data-action="add-to-cart">Dodaj do koszyka</button>
                     </div>
                 </div>
 
-                <div class="product-card" data-base-price="92">
+                <div class="product-card" data-id="lucaffe-mamma-lucia" data-base-price="92">
                     <span class="badge-tag bestseller-badge">BESTSELLER</span>
-                    <button class="btn-wishlist" title="Dodaj do ulubionych">❤️</button>
-                    <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=500&auto=format&fit=crop&q=80" alt="Lucaffe Mamma Lucia" style="height:200px; object-fit:contain; width:100%;">
+                    <button type="button" class="btn-wishlist" data-action="toggle-wishlist" title="Dodaj do ulubionych" aria-label="Dodaj do ulubionych: Lucaffe Mamma Lucia" aria-pressed="false">❤️</button>
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=500" alt="Lucaffe Mamma Lucia" loading="lazy">
+                    </div>
                     <div class="rating">⭐ 4.89</div>
                     <h3>Lucaffe Mamma Lucia</h3>
                     <p class="description">Tradycyjny smak palonej kawy z czekoladowym finiszem.</p>
                     <div class="weight-selector">
-                        <label>Waga:</label>
-                        <select class="select-weight">
+                        <label for="weight-lucaffe-mamma-lucia">Waga:</label>
+                        <select id="weight-lucaffe-mamma-lucia" class="select-weight">
                             <option value="0.5">500 g</option>
                             <option value="1" selected>1 kg</option>
                             <option value="1.5">1.5 kg</option>
@@ -277,7 +296,7 @@
                         <div class="price-box">
                             <span class="price">92 PLN</span>
                         </div>
-                        <button class="btn-add">Dodaj do koszyka</button>
+                        <button type="button" class="btn-add" data-action="add-to-cart">Dodaj do koszyka</button>
                     </div>
                 </div>
 
@@ -289,30 +308,68 @@
     <!-- МОДАЛЬНІ ВІКНА -->
 
     <!-- Кошик -->
-    <div id="cart-modal" class="modal">
+    <div id="cart-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="cart-title">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Twoj Koszyk</h2>
-                <span id="close-cart" class="close-btn">&times;</span>
+                <h2 id="cart-title">Twój koszyk</h2>
+                <button type="button" class="close-btn" data-action="close-modal" aria-label="Zamknij">&times;</button>
             </div>
             <div id="cart-items" class="modal-body"></div>
             <div class="modal-footer">
                 <div>Razem: <strong id="cart-total-price">0 PLN</strong></div>
-                <button class="btn-primary" onclick="alert('Dziękujemy za zamówienie!')">Złóż zamówienie</button>
+                <button type="button" class="btn-primary" data-action="checkout">Złóż zamówienie</button>
             </div>
+            <p id="cart-status" class="status-msg" role="status" aria-live="polite"></p>
         </div>
     </div>
 
     <!-- Обране (Ulubione) -->
-    <div id="wishlist-modal" class="modal">
+    <div id="wishlist-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="wishlist-title">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Ulubione Produkty</h2>
-                <span id="close-wishlist" class="close-btn">&times;</span>
+                <h2 id="wishlist-title">Ulubione produkty</h2>
+                <button type="button" class="close-btn" data-action="close-modal" aria-label="Zamknij">&times;</button>
             </div>
             <div id="wishlist-items" class="modal-body"></div>
         </div>
-    </div> 
-    
+    </div>
 
-    <!-- Про нас (O
+    <!-- Про нас (O marce) -->
+    <div id="about-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="about-title">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="about-title">O marce CafeMaster</h2>
+                <button type="button" class="close-btn" data-action="close-modal" aria-label="Zamknij">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Jesteśmy rzemieślniczą palarnią kawy z Warszawy. Oferujemy wyłącznie świeżo palone ziarna 100% Arabica oraz mieszanki z Robustą premium.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Контакти (Kontakt) -->
+    <div id="contact-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="contact-title">Kontakt</h2>
+                <button type="button" class="close-btn" data-action="close-modal" aria-label="Zamknij">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Adres:</strong> ul. Świętokrzyska 34, 00-824 Warszawa</p>
+                <p><strong>Telefon:</strong> +48 733 490 564</p>
+                <p><strong>Godziny otwarcia:</strong> Pon-Pt: 9:00-20:00, Sob: 10:00-18:00</p>
+                <hr class="divider">
+                <form id="contact-form">
+                    <input type="text" class="form-input" name="name" placeholder="Twoje imię" aria-label="Twoje imię" autocomplete="name" required>
+                    <input type="email" class="form-input" name="email" placeholder="Twój e-mail" aria-label="Twój e-mail" autocomplete="email" required>
+                    <textarea class="form-input" name="message" placeholder="Wiadomość" aria-label="Wiadomość" rows="3" required></textarea>
+                    <button type="submit" class="btn-primary btn-block">Wyślij wiadomość</button>
+                </form>
+                <p id="contact-status" class="status-msg" role="status" aria-live="polite"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
